@@ -129,8 +129,8 @@ PclGPT-CN: [https://huggingface.co/DUTIR-Wang/PclGPT-CN](https://huggingface.co/
 ```python
 from transformers import AutoTokenizer, AutoModel
 
-tokenizer = AutoTokenizer.from_pretrained("/root/autodl-tmp/EMNLP-CCPC-LORA-M2", trust_remote_code=True)
-model = AutoModel.from_pretrained("/root/autodl-tmp/EMNLP-CCPC-LORA-M2", trust_remote_code=True).half().cuda()
+tokenizer = AutoTokenizer.from_pretrained("DUTIR-Wang/PclGPT-CN", trust_remote_code=True)
+model = AutoModel.from_pretrained("DUTIR-Wang/PclGPT-CN", trust_remote_code=True).half().cuda()
 
 def generate_response():
     # 样例文本
