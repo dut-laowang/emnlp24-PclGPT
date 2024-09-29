@@ -116,7 +116,9 @@ PclGPT是一款基于 ChatGLM-3 和 LLaMA-2 的双语言大型语言模型组 (L
 
 # 权重和下载
 我们在Hugging Face上发布了我们的 PclGPT-CN 和 PclGPT-EN 的 1.0版本权重 
+
 PclGPT-EN: [https://huggingface.co/DUTIR-Wang/PclGPT-EN](https://huggingface.co/DUTIR-Wang/PclGPT-EN)
+
 PclGPT-CN: [https://huggingface.co/DUTIR-Wang/PclGPT-CN](https://huggingface.co/DUTIR-Wang/PclGPT-CN)
 
 # 推理
