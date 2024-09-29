@@ -12,7 +12,7 @@ PclGPT是一款基于 ChatGLM-3 和 LLaMA-2 的双语言大型语言模型组 (L
       <th rowspan="2">Model</th>
       <th colspan="3">DPM</th>
       <th colspan="3">TD</th>
-      <th colspan="3">CPCL (CN)</th>
+      <th colspan="3">CCPC (CN)</th>
     </tr>
     <tr>
       <th>P</th><th>R</th><th>F1</th>
@@ -45,14 +45,22 @@ PclGPT是一款基于 ChatGLM-3 和 LLaMA-2 的双语言大型语言模型组 (L
       <td>Claude-3</td><td>52.3</td><td>52.5</td><td>52.3</td><td>61.6</td><td>64.1</td><td>63.2</td><td>57.2</td><td>57.7</td><td>57.3</td>
     </tr>
     <tr>
-      <td rowspan="2">LLMs (Ours)</td>
-      <td>PclGPT-EN</td><td>**80.4**</td><td>**81.8**</td><td>**81.1**</td><td>89.9</td><td>88.9</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>
+      <td rowspan="2">Base-LLMs</td>
+      <td>LLama-2-7B</td><td>50.9</td><td>52.6</td><td>51.4</td><td>49.9</td><td>49.7</td><td>49.7</td><td>45.2</td><td>47.5</td><td>46.3</td>
     </tr>
     <tr>
-      <td>PclGPT-CN</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>69.1</td><td>72.0</td><td>70.2</td>
+      <td>ChatGLM-3-6B</td><td>50.9</td><td>N/A</td><td>N/A</td><td>49.9</td><td>N/A</td><td>N/A</td><td>45.2</td><td>51.9</td><td>50.2</td>
+    </tr>
+    <tr>
+      <td rowspan="2">LLMs (Ours)</td>
+      <td><strong>PclGPT-EN</strong></td><td><strong>80.4</strong></td><td><strong>81.8</strong></td><td><strong>81.1</strong></td><td><strong>89.9</strong></td><td><strong>88.9</strong></td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>
+    </tr>
+    <tr>
+      <td><strong>PclGPT-CN</strong></td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td><strong>69.1</strong></td><td><strong>72.0</strong></td><td><strong>70.2</strong></td>
     </tr>
   </tbody>
 </table>
+
 
 # 权重和下载
 我们在Hugging Face上发布了我们的 PclGPT-CN 和 PclGPT-EN 的 1.0版本权重 
