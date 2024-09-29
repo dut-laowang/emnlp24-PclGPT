@@ -124,7 +124,55 @@ PclGPT-EN: [https://huggingface.co/DUTIR-Wang/PclGPT-EN](https://huggingface.co/
 PclGPT-CN: [https://huggingface.co/DUTIR-Wang/PclGPT-CN](https://huggingface.co/DUTIR-Wang/PclGPT-CN)
 
 # 推理
-下载权重后，使用以下代码进行单条推理
+下载权重后，使用以下代码进行PclGPT-EN的单条推理
+```python
+from transformers import LlamaTokenizer, LlamaForCausalLM
+
+# 加载LLaMA模型和Tokenizer
+tokenizer = LlamaTokenizer.from_pretrained("/root/autodl-tmp/MEDICALGPT/EMNLP-SEM-LORA-M2")
+model = LlamaForCausalLM.from_pretrained("/root/autodl-tmp/MEDICALGPT/EMNLP-SEM-LORA-M2").half().cuda()
+
+def generate_response():
+    # 样例文本
+    sample_text = "For someone who's just a mere street sweeper, you sure think highly of yourself."
+    
+    instruction = (
+        "Suppose you are a linguist and you are asked to judge whether a text is patronizing and condescending. "
+        "Patronizing and condescending language expresses a sense of superiority or belittles others, making them feel inferior or incapable. "
+        "# Your return: Based on the following conversation, make a decision and return your choice. "
+        "FALSE means the text is not a condescending language, and TRUE means the text is a condescending language. "
+        "-> here is the text: （{}）"
+    ).format(sample_text)
+
+    # Tokenizer 和模型推理
+    inputs = tokenizer(instruction, return_tensors="pt").to("cuda")
+    outputs = model.generate(**inputs, max_length=1024)
+    output_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    model_output = extract_option(output_text)
+    return classify_output(model_output)
+
+def extract_option(output_text):
+    options = ['TRUE', 'FALSE']
+    for option in options:
+        if option in output_text:
+            return option
+    return "无法识别的输出"
+
+def classify_output(model_output):
+    # 根据模型输出返回解释
+    return "The text is {} a condescending language.".format(
+        "not" if model_output == "FALSE" else ""
+    )
+
+response = generate_response()
+print(response)
+```
+得到的输出为
+```
+"The text is  a condescending language."
+```
+
+下载权重后，使用以下代码进行PclGPT-CN的单条推理
 
 ```python
 from transformers import AutoTokenizer, AutoModel
@@ -182,3 +230,4 @@ print(response)
 ```
 # 引用
 如果你计划应用或扩展我们的工作，请引用以下论文
+
