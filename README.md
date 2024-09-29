@@ -5,6 +5,12 @@ PclGPT是一款基于 ChatGLM-3 和 LLaMA-2 的双语言大型语言模型组 (L
 ![我们通过构建Pcl-PT预训练数据集, Pcl-SFT监督微调数据集以应用于预训练/监督微调过程。具体的构建和训练流程如下图所示。](https://github.com/dut-laowang/PclGPT/blob/main/figures/framework.PNG)
 
 # 测试结果
+我们在两个居高临下检测公开英文数据集（Talkdown , TD）& （Don't Patronize Me , DPM）和一个中文数据集（CPCL）上评估了模型组的检测性能。
+
+##英文
+在
+##中文
+
 <table>
   <thead>
     <tr>
