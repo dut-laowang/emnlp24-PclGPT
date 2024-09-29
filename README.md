@@ -120,7 +120,7 @@ PclGPT是一款基于 ChatGLM-3 和 LLaMA-2 的双语言大型语言模型组 (L
 # 推理
 使用以下代码进行权重的推理
 
-'''
+```python
 from transformers import AutoTokenizer, AutoModel
 
 tokenizer = AutoTokenizer.from_pretrained("/root/autodl-tmp/EMNLP-CCPC-LORA-M2", trust_remote_code=True)
@@ -168,7 +168,8 @@ def classify_output(model_output):
         return "无法识别的输出，请检查输入或模型输出"
 
 response = generate_response()
-print(response) 
+print(response)
+
 
 # 引用
 如果你计划应用或扩展我们的工作，请引用以下论文
