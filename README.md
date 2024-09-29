@@ -1,4 +1,4 @@
-## 🎉 The paper has been accepted in EMNLP 2024 (Findings)! 🎉  
+## 🎉 The paper has been accepted in EMNLP 2024 (Findings)! 
 Paper link: [Link to paper](#)
 # PclGPT
 PclGPT is a bilingual large language model group (LLM) based on ChatGLM-3 and LLaMA-2, divided into two versions according to the training language: PclGPT-CN (based on ChatGLM) and PclGPT-EN (based on LLaMA). Built upon these foundational models, PclGPT has undergone both pre-training and supervised fine-tuning (SFT) to detect patronizing and condescending language (PCL) and other offensive speech. The maximum supported context length for the model is 4096 tokens.
