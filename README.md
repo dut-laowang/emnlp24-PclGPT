@@ -118,7 +118,7 @@ PclGPT是一款基于 ChatGLM-3 和 LLaMA-2 的双语言大型语言模型组 (L
 我们在Hugging Face上发布了我们的 PclGPT-CN 和 PclGPT-EN 的 1.0版本权重 
 
 # 推理
-使用以下代码进行权重的推理
+下载权重后，使用以下代码进行单条推理
 
 ```python
 from transformers import AutoTokenizer, AutoModel
@@ -169,7 +169,10 @@ def classify_output(model_output):
 
 response = generate_response()
 print(response)
-
-
+```
+得到的输出为
+```
+"判断为D级：严重居高临下"
+```
 # 引用
 如果你计划应用或扩展我们的工作，请引用以下论文
