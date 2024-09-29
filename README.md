@@ -53,7 +53,7 @@ PclGPT是一款基于 ChatGLM-3 和 LLaMA-2 的双语言大型语言模型组 (L
     </tr>
     <tr>
       <td rowspan="2">LLMs (Ours)</td>
-      <td><strong>PclGPT-EN</strong></td><td><strong>80.4</strong></td><td><strong>81.8</strong></td><td><strong>81.1</strong></td><td><strong>89.9</strong></td><td><strong>88.9</strong></td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>
+      <td><strong>PclGPT-EN</strong></td><td><strong>80.4</strong></td><td><strong>81.8</strong></td><td><strong>81.1</strong></td><td><strong>89.9</strong></td><td><strong>89.0</strong></td><td>88.9</td><td>N/A</td><td>N/A</td><td>N/A</td>
     </tr>
     <tr>
       <td><strong>PclGPT-CN</strong></td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td><strong>69.1</strong></td><td><strong>72.0</strong></td><td><strong>70.2</strong></td>
