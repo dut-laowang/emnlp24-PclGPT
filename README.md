@@ -169,7 +169,7 @@ print(response)
 ```
 得到的输出为
 ```
-"The text is  a condescending language."
+"The text is a condescending language."
 ```
 
 下载权重后，使用以下代码进行PclGPT-CN的单条推理
