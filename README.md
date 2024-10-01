@@ -129,8 +129,8 @@ PclGPT-CN: [https://huggingface.co/DUTIR-Wang/PclGPT-CN](https://huggingface.co/
 from transformers import LlamaTokenizer, LlamaForCausalLM
 
 # 加载LLaMA模型和Tokenizer
-tokenizer = LlamaTokenizer.from_pretrained("/root/autodl-tmp/MEDICALGPT/EMNLP-SEM-LORA-M2")
-model = LlamaForCausalLM.from_pretrained("/root/autodl-tmp/MEDICALGPT/EMNLP-SEM-LORA-M2").half().cuda()
+tokenizer = LlamaTokenizer.from_pretrained("DUTIR-Wang/PclGPT-EN")
+model = LlamaForCausalLM.from_pretrained("DUTIR-Wang/PclGPT-EN").half().cuda()
 
 def generate_response():
     # 样例文本
