@@ -1,4 +1,9 @@
-## 🎓 This paper has been accepted in EMNLP 2024 (Findings)
+# PclGPT
+PclGPT is a bilingual large language model group (LLM) based on ChatGLM-3 and LLaMA-2, divided into two versions according to the training language: PclGPT-CN (based on ChatGLM) and PclGPT-EN (based on LLaMA). Built upon these foundational models, PclGPT has undergone both pre-training and supervised fine-tuning (SFT) to detect patronizing and condescending language (PCL) and other offensive speech. The maximum supported context length for the model is 4096 tokens.
+
+PclGPT是一款基于 ChatGLM-3 和 LLaMA-2 的双语言大型语言模型组 (LLM)，根据训练语言分为PclGPT-CN（基于ChatGLM） 和PclGPT-EN（基于LLaMA）。在基座的基础上，PclGPT综合进行了预训练和监督式微调 (SFT), 用于进行**居高临下言论**(Patronizing and Condescending Language, PCL)和其他攻击性言论的检测。模型支持的最大上下文为4096。
+
+# 🎓 This paper has been accepted in EMNLP 2024 (Findings)
 Our paper can be accessed here. Paper link: [https://arxiv.org/abs/2410.00361](https://arxiv.org/abs/2410.00361)
 
 论文链接：  [https://arxiv.org/abs/2410.00361](https://arxiv.org/abs/2410.00361)
@@ -15,10 +20,6 @@ Our paper can be accessed here. Paper link: [https://arxiv.org/abs/2410.00361](h
       url={https://arxiv.org/abs/2410.00361}, 
 }
 ```
-# PclGPT
-PclGPT is a bilingual large language model group (LLM) based on ChatGLM-3 and LLaMA-2, divided into two versions according to the training language: PclGPT-CN (based on ChatGLM) and PclGPT-EN (based on LLaMA). Built upon these foundational models, PclGPT has undergone both pre-training and supervised fine-tuning (SFT) to detect patronizing and condescending language (PCL) and other offensive speech. The maximum supported context length for the model is 4096 tokens.
-
-PclGPT是一款基于 ChatGLM-3 和 LLaMA-2 的双语言大型语言模型组 (LLM)，根据训练语言分为PclGPT-CN（基于ChatGLM） 和PclGPT-EN（基于LLaMA）。在基座的基础上，PclGPT综合进行了预训练和监督式微调 (SFT), 用于进行**居高临下言论**(Patronizing and Condescending Language, PCL)和其他攻击性言论的检测。模型支持的最大上下文为4096。
 
 # 训练过程
 ![我们通过构建Pcl-PT预训练数据集, Pcl-SFT监督微调数据集以应用于预训练/监督微调过程。具体的构建和训练流程如下图所示。](https://github.com/dut-laowang/PclGPT/blob/main/figures/framework.PNG)
