@@ -1,6 +1,7 @@
 ## 🎓 This paper has been accepted in EMNLP 2024 (Findings)
 Our paper can be accessed here. Paper link: [https://arxiv.org/abs/2410.00361](https://arxiv.org/abs/2410.00361)
 
+论文链接：  [https://arxiv.org/abs/2410.00361](https://arxiv.org/abs/2410.00361)
 # 引用
 如果你计划应用或扩展我们的工作，请引用以下论文
 ```bibtex
