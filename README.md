@@ -1,5 +1,19 @@
 ## 🎓 This paper has been accepted in EMNLP 2024 (Findings)
-Paper link: [Link to paper](https://arxiv.org/abs/2410.00361)
+Our paper can be accessed here. Paper link: [https://arxiv.org/abs/2410.00361](https://arxiv.org/abs/2410.00361)
+
+# 引用
+如果你计划应用或扩展我们的工作，请引用以下论文
+```bibtex
+@misc{wang2024pclgptlargelanguagemodel,
+      title={PclGPT: A Large Language Model for Patronizing and Condescending Language Detection}, 
+      author={Hongbo Wang and Mingda Li and Junyu Lu and Hebin Xia and Liang Yang and Bo Xu and Ruizhu Liu and Hongfei Lin},
+      year={2024},
+      eprint={2410.00361},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2410.00361}, 
+}
+```
 # PclGPT
 PclGPT is a bilingual large language model group (LLM) based on ChatGLM-3 and LLaMA-2, divided into two versions according to the training language: PclGPT-CN (based on ChatGLM) and PclGPT-EN (based on LLaMA). Built upon these foundational models, PclGPT has undergone both pre-training and supervised fine-tuning (SFT) to detect patronizing and condescending language (PCL) and other offensive speech. The maximum supported context length for the model is 4096 tokens.
 
@@ -228,8 +242,6 @@ print(response)
 ```
 "判断为D级：严重居高临下"
 ```
-# 引用
-如果你计划应用或扩展我们的工作，请引用以下论文
 
 # 声明
 **本文研究的工作隶属于毒性言论（Toxic Speech）的子范围，居高临下言论属于微攻击言论的一种，因此本研究的部分工作可能会造成用户的不适和敏感。本研究仅用于弱势群体保护和互联网言论攻击治理（判别），请勿使用模型权重进行任何有害内容生成！**
