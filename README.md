@@ -3,7 +3,7 @@ PclGPT is a bilingual large language model group (LLM) based on ChatGLM-3 and LL
 
 PclGPT是一款基于 ChatGLM-3 和 LLaMA-2 的双语言大型语言模型组 (LLM)，根据训练语言分为PclGPT-CN（基于ChatGLM） 和PclGPT-EN（基于LLaMA）。在基座的基础上，PclGPT综合进行了预训练和监督式微调 (SFT), 用于进行**居高临下言论**(Patronizing and Condescending Language, PCL)和其他攻击性言论的检测。模型支持的最大上下文为4096。
 
-## 🎓 This paper has been accepted in EMNLP 2024 (Findings)
+## 🎓 This paper has been accepted in EMNLP 2024 
 《PclGPT: A Large Language Model for Patronizing and Condescending Language Detection》
 
 Our paper can be accessed here. Paper link: [https://arxiv.org/abs/2410.00361](https://arxiv.org/abs/2410.00361)
