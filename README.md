@@ -1,3 +1,8 @@
+# PCL
+**Patronizing and Condescending Language** (PCL) is a type of micro-aggression against vulnerable groups on the Internet. It is a subcategory of toxic speech and is an emerging field since 2022.
+
+**居高临下言论**(Patronizing and Condescending Language, PCL) 是一种针对于互联网弱势群体的微攻击言论，隶属于毒性言论（Toxic Speech）的子类别，是22年后的新兴领域。
+
 # PclGPT
 PclGPT is a bilingual large language model group (LLM) based on ChatGLM-3 and LLaMA-2, divided into two versions according to the training language: PclGPT-CN (based on ChatGLM) and PclGPT-EN (based on LLaMA). Built upon these foundational models, PclGPT has undergone both pre-training and supervised fine-tuning (SFT) to detect patronizing and condescending language (PCL) and other offensive speech. The maximum supported context length for the model is 4096 tokens.
 
