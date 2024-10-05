@@ -15,20 +15,6 @@ PclGPT is a bilingual large language model group (LLM) based on ChatGLM-3 and LL
 
 PclGPT是一款基于 ChatGLM-3 和 LLaMA-2 的双语言大型语言模型组 (LLM)，根据训练语言分为PclGPT-CN（基于ChatGLM） 和PclGPT-EN（基于LLaMA）。在基座的基础上，PclGPT综合进行了预训练和监督式微调 (SFT), 用于进行**居高临下言论**(Patronizing and Condescending Language, PCL)和其他攻击性言论的检测。模型支持的最大上下文为4096。
 
-# 引用
-如果你计划应用或扩展我们的工作，请引用以下论文
-```bibtex
-@misc{wang2024pclgptlargelanguagemodel,
-      title={PclGPT: A Large Language Model for Patronizing and Condescending Language Detection}, 
-      author={Hongbo Wang and Mingda Li and Junyu Lu and Hebin Xia and Liang Yang and Bo Xu and Ruizhu Liu and Hongfei Lin},
-      year={2024},
-      eprint={2410.00361},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2410.00361}, 
-}
-```
-
 # 训练过程
 ![我们通过构建Pcl-PT预训练数据集, Pcl-SFT监督微调数据集以应用于预训练/监督微调过程。具体的构建和训练流程如下图所示。](https://github.com/dut-laowang/PclGPT/blob/main/figures/framework.PNG)
 
@@ -251,6 +237,19 @@ print(response)
 得到的输出为
 ```
 "判断为D级：严重居高临下"
+```
+# 引用
+如果你计划应用或扩展我们的工作，请引用以下论文
+```bibtex
+@misc{wang2024pclgptlargelanguagemodel,
+      title={PclGPT: A Large Language Model for Patronizing and Condescending Language Detection}, 
+      author={Hongbo Wang and Mingda Li and Junyu Lu and Hebin Xia and Liang Yang and Bo Xu and Ruizhu Liu and Hongfei Lin},
+      year={2024},
+      eprint={2410.00361},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2410.00361}, 
+}
 ```
 
 # 声明
