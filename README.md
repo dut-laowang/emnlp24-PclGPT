@@ -1,11 +1,9 @@
+# PclGPT: A Large Language Model for Patronizing and Condescending Language Detection
 ## 🎓 This paper has been accepted in EMNLP 2024 ！
-《PclGPT: A Large Language Model for Patronizing and Condescending Language Detection》
-
-Our paper can be accessed here. Paper link: [https://arxiv.org/abs/2410.00361](https://arxiv.org/abs/2410.00361)
-
-论文链接：  [https://arxiv.org/abs/2410.00361](https://arxiv.org/abs/2410.00361)
 
 # PCL
+Our paper can be accessed here. Paper link: [https://arxiv.org/abs/2410.00361](https://arxiv.org/abs/2410.00361)
+
 **Patronizing and Condescending Language** (PCL) is a type of micro-aggression against vulnerable groups on the Internet. It is a subcategory of toxic speech and is an emerging field since 2022.
 
 **居高临下言论**(Patronizing and Condescending Language, PCL) 是一种针对于互联网弱势群体的微攻击言论，隶属于毒性言论（Toxic Speech）的子类别，是22年后的新兴领域。
