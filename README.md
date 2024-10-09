@@ -7,16 +7,16 @@
 # PclGPT
 PclGPT is a bilingual large language model group (LLM) based on ChatGLM-3 and LLaMA-2, divided into two versions according to the training language: PclGPT-CN (based on ChatGLM) and PclGPT-EN (based on LLaMA). Built upon these foundational models, PclGPT has undergone both pre-training and supervised fine-tuning (SFT) to detect patronizing and condescending language (PCL) and other offensive speech. The maximum supported context length for the model is 4096 tokens.
 
-# 训练过程
-![我们通过构建Pcl-PT预训练数据集, Pcl-SFT监督微调数据集以应用于预训练/监督微调过程。具体的构建和训练流程如下图所示。](https://github.com/dut-laowang/PclGPT/blob/main/figures/framework.PNG)
+# Training Process
+![We constructed the Pcl-PT pre-training dataset and the Pcl-SFT supervised fine-tuning dataset to be used in the pre-training/supervised fine-tuning process. The specific construction and training process are illustrated in the diagram below.](https://github.com/dut-laowang/PclGPT/blob/main/figures/framework.PNG)
 
-# 测试结果
-我们在两个居高临下检测公开英文数据集（Talkdown, Don't Patronize Me) 和一个中文数据集（CPCL）上评估了模型组的检测性能。
+# Test Results
+We evaluated the detection performance of the model suite on two public English datasets for condescension detection (Talkdown, Don't Patronize Me) and one Chinese dataset (CPCL).
 
-性能指标采用 Macro 计算的 Precision、Recall、F1-score
+The performance metrics are calculated using Macro Precision, Recall, and F1-score.
 
-## 英文
-在PclGPT-EN 英语组的检测任务中的结果为
+## English Task
+The results for the detection tasks in the PclGPT-EN English model group are as follows:
 <table>
   <thead>
     <tr>
@@ -66,8 +66,8 @@ PclGPT is a bilingual large language model group (LLM) based on ChatGLM-3 and LL
 </table>
 
 
-## 中文
-在PclGPT-CN 中文组的检测任务中的结果为
+## Chinese Task
+The results for the detection tasks in the PclGPT-CN Chinese model group are as follows:
 <table>
   <thead>
     <tr>
