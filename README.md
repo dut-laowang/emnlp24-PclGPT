@@ -225,7 +225,7 @@ def classify_output(model_output):
 response = generate_response()
 print(response)
 ```
-得到的输出为
+The output will be
 ```
 "判断为D级：严重居高临下"
 ```
