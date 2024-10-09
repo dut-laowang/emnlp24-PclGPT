@@ -246,4 +246,4 @@ If you plan to apply or extend our work, please cite the following paper.
 ```
 
 # Statement
-**The work studied in this paper falls within the subcategory of Toxic Speech. Condescending speech is a form of microaggression, and therefore, part of this research may cause discomfort and sensitivity among users. This research is solely intended for the protection of vulnerable groups and for identifying and managing online verbal attacks. Please do not use the model weights to generate any harmful content.**
+**The work studied in this paper falls within the subcategory of Toxic Speech. PCL is a form of microaggression, and therefore, part of this research may cause discomfort and sensitivity among users. This research is solely intended for the protection of vulnerable groups and for identifying and managing online verbal attacks. Please do not use the model weights to generate any harmful content.**
