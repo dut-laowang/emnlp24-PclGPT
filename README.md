@@ -118,24 +118,24 @@ PclGPT is a bilingual large language model group (LLM) based on ChatGLM-3 and LL
 </table>
 
 
-# 权重和下载
-我们在Hugging Face上发布了我们的 PclGPT-CN 和 PclGPT-EN 的 1.0版本权重 
+# Weights and Downloads
+We have released version 1.0 weights of our PclGPT-CN and PclGPT-EN models on Hugging Face.
 
 PclGPT-EN: [https://huggingface.co/DUTIR-Wang/PclGPT-EN](https://huggingface.co/DUTIR-Wang/PclGPT-EN)
 
 PclGPT-CN: [https://huggingface.co/DUTIR-Wang/PclGPT-CN](https://huggingface.co/DUTIR-Wang/PclGPT-CN)
 
-# 推理
-下载权重后，使用以下代码进行PclGPT-EN的单条推理
+# Inference
+After downloading the weights, use the following code for single-sample inference with PclGPT-EN.
 ```python
 from transformers import LlamaTokenizer, LlamaForCausalLM
 
-# 加载LLaMA模型和Tokenizer
+# LLaMA and Tokenizer
 tokenizer = LlamaTokenizer.from_pretrained("DUTIR-Wang/PclGPT-EN")
 model = LlamaForCausalLM.from_pretrained("DUTIR-Wang/PclGPT-EN").half().cuda()
 
 def generate_response():
-    # 样例文本
+    # Sample
     sample_text = "For someone who's just a mere street sweeper, you sure think highly of yourself."
     
     instruction = (
@@ -146,7 +146,6 @@ def generate_response():
         "-> here is the text: （{}）"
     ).format(sample_text)
 
-    # Tokenizer 和模型推理
     inputs = tokenizer(instruction, return_tensors="pt").to("cuda")
     outputs = model.generate(**inputs, max_length=1024)
     output_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
@@ -158,10 +157,10 @@ def extract_option(output_text):
     for option in options:
         if option in output_text:
             return option
-    return "无法识别的输出"
+    return "Could not detect."
 
 def classify_output(model_output):
-    # 根据模型输出返回解释
+    # return
     return "The text is {} a condescending language.".format(
         "not" if model_output == "FALSE" else ""
     )
@@ -169,12 +168,12 @@ def classify_output(model_output):
 response = generate_response()
 print(response)
 ```
-得到的输出为
+The output will be
 ```
 "The text is a condescending language."
 ```
 
-下载权重后，使用以下代码进行PclGPT-CN的单条推理
+After downloading the weights, use the following code for single-sample inference with PclGPT-CN.
 
 ```python
 from transformers import AutoTokenizer, AutoModel
@@ -230,10 +229,10 @@ print(response)
 ```
 "判断为D级：严重居高临下"
 ```
-# 引用
+# Cite
 Our paper can be accessed here. Paper link: [https://arxiv.org/abs/2410.00361](https://arxiv.org/abs/2410.00361)
 
-如果你计划应用或扩展我们的工作，请引用以下论文
+If you plan to apply or extend our work, please cite the following paper.
 ```bibtex
 @misc{wang2024pclgptlargelanguagemodel,
       title={PclGPT: A Large Language Model for Patronizing and Condescending Language Detection}, 
@@ -246,5 +245,5 @@ Our paper can be accessed here. Paper link: [https://arxiv.org/abs/2410.00361](h
 }
 ```
 
-# 声明
-**本文研究的工作隶属于毒性言论（Toxic Speech）的子范围，居高临下言论属于微攻击言论的一种，因此本研究的部分工作可能会造成用户的不适和敏感。本研究仅用于弱势群体保护和互联网言论攻击治理（判别），请勿使用模型权重进行任何有害内容生成！**
+# Statement
+**The work studied in this paper falls within the subcategory of Toxic Speech. Condescending speech is a form of microaggression, and therefore, part of this research may cause discomfort and sensitivity among users. This research is solely intended for the protection of vulnerable groups and for identifying and managing online verbal attacks. Please do not use the model weights to generate any harmful content.**
