@@ -1,9 +1,16 @@
 from transformers import AutoTokenizer, AutoModel
+import unicodedata
 
 # 加载 tokenizer 和模型
 tokenizer = AutoTokenizer.from_pretrained("DUTIR-Wang/PclGPT-CN", trust_remote_code=True)
 model = AutoModel.from_pretrained("DUTIR-Wang/PclGPT-CN", trust_remote_code=True).half().cuda()
 
+# 清洗函数：统一全角字符、移除不可见字符
+def clean_input(text):
+    normalized = unicodedata.normalize('NFKC', text)
+    return ''.join(ch for ch in normalized if ch.isprintable())
+
+# 推理主函数
 def generate_response(user_input):
     instruction = (
         "假定你是一名语言学家，检测居高临下言论。居高临下言论是优势地位群体针对弱势群体的优越言论，"
@@ -15,13 +22,13 @@ def generate_response(user_input):
         "-> 文本：({})"
     ).format(str(user_input).strip())
 
-    inputs = tokenizer(str(instruction), return_tensors="pt")
-    inputs = inputs.to("cuda")
+    inputs = tokenizer(instruction, return_tensors="pt").to("cuda")
     outputs = model.generate(**inputs, max_length=1024)
     output_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
     model_output = extract_option(output_text)
     return classify_output(model_output)
 
+# 提取模型返回的 A/B/C/D
 def extract_option(output_text):
     options = ['A', 'B', 'C', 'D']
     for char in reversed(output_text.strip()):
@@ -29,6 +36,7 @@ def extract_option(output_text):
             return char
     return "无法识别的输出"
 
+# 显示判断等级
 def classify_output(model_output):
     if model_output == "A":
         return "判断为A级：非居高临下"
@@ -41,19 +49,21 @@ def classify_output(model_output):
     else:
         return "无法识别的输出，请检查输入或模型输出"
 
-# 循环交互
+# 主交互循环
 if __name__ == "__main__":
     print("欢迎使用居高临下言论识别模型，输入 exit 可退出。\n")
+
     while True:
         user_input = input("请输入文本，进行居高临下言论判别：\n")
         if user_input.strip().lower() == "exit":
             print("已退出。")
             break
         if not user_input.strip():
-            print("输入不能为空，请重新输入。")
+            print("⚠️ 输入不能为空，请重新输入。\n")
             continue
         try:
-            response = generate_response(user_input)
+            cleaned = clean_input(user_input)
+            response = generate_response(cleaned)
             print(response + "\n")
         except Exception as e:
-            print("模型处理出错：", e)
+            print("❌ 模型处理出错：", e, "\n")
