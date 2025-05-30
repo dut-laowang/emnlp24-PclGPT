@@ -1,11 +1,10 @@
 from transformers import AutoTokenizer, AutoModel
 
-# 加载模型和 tokenizer
+# 加载 tokenizer 和模型
 tokenizer = AutoTokenizer.from_pretrained("DUTIR-Wang/PclGPT-CN", trust_remote_code=True)
 model = AutoModel.from_pretrained("DUTIR-Wang/PclGPT-CN", trust_remote_code=True).half().cuda()
 
 def generate_response(user_input):
-    # 构造提示
     instruction = (
         "假定你是一名语言学家，检测居高临下言论。居高临下言论是优势地位群体针对弱势群体的优越言论，"
         "语言攻击性较弱，但往往夹杂着讽刺，刻板印象，会对弱势群体造成伤害。"
@@ -14,10 +13,10 @@ def generate_response(user_input):
         "D级：严重居高临下（说话人语气轻蔑，严重歧视弱势群体）。"
         "接下来将给你一段文本，根据上述规则，你负责判断该文本属于（A/B/C/D级）的哪一级，并只回答选项。"
         "-> 文本：({})"
-    ).format(user_input)
+    ).format(str(user_input).strip())
 
-    # 推理
-    inputs = tokenizer(instruction, return_tensors="pt").to("cuda")
+    inputs = tokenizer(str(instruction), return_tensors="pt")
+    inputs = inputs.to("cuda")
     outputs = model.generate(**inputs, max_length=1024)
     output_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
     model_output = extract_option(output_text)
@@ -42,8 +41,19 @@ def classify_output(model_output):
     else:
         return "无法识别的输出，请检查输入或模型输出"
 
-# 用户交互
+# 循环交互
 if __name__ == "__main__":
-    user_input = input("请输入文本，进行居高临下言论判别：\n")
-    response = generate_response(user_input)
-    print(response)
+    print("欢迎使用居高临下言论识别模型，输入 exit 可退出。\n")
+    while True:
+        user_input = input("请输入文本，进行居高临下言论判别：\n")
+        if user_input.strip().lower() == "exit":
+            print("已退出。")
+            break
+        if not user_input.strip():
+            print("输入不能为空，请重新输入。")
+            continue
+        try:
+            response = generate_response(user_input)
+            print(response + "\n")
+        except Exception as e:
+            print("模型处理出错：", e)
